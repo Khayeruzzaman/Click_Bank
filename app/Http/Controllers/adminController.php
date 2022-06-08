@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-
+use RealRashid\SweetAlert\Facades\Alert;
 use App\Models\Post;
 
 use Illuminate\Http\Request;
@@ -41,6 +41,7 @@ class adminController extends Controller
 		$news->link = $request->newsLink;
         $news-> save();
 
+        Alert::success('Congrats',"The Video has been added sucessfully");
         return redirect()->route('AdminDashboard');
     }
 }

@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use RealRashid\SweetAlert\Facades\Alert;
 use App\Models\Post;
 use App\Models\Customer;
 
@@ -41,6 +42,8 @@ class userController extends Controller
         $user->points++;
         session()->put('userPoint', $user->points);
         $user->save();
+
+        Alert::success('Congrats',"Successfully 1 Point Has Been Added");
         return redirect()->route('UserDashboard');
     }
 }

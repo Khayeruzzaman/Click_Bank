@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use RealRashid\SweetAlert\Facades\Alert;
 use App\Models\Admin;
 use App\Models\Customer;
 
@@ -93,6 +94,7 @@ class HomeController extends Controller
         $var->points = '0';
         $var->save();
 
+        Alert::success('Congrats',"Successfully Registered");
         
         return redirect()->route('Login');
         

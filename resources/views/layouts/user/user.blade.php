@@ -20,7 +20,7 @@
           background-size: cover;">
 
 	@include('includes.user.nav')
-	
+	@include('sweetalert::alert')
 	
 
 	<div>

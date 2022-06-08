@@ -20,7 +20,7 @@
 
 	@include('includes.admin.nav')
 	
-	
+	@include('sweetalert::alert')
 
 	<div>
 		@yield('content')

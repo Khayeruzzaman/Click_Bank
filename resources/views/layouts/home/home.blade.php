@@ -19,6 +19,7 @@
           background-size: cover;">
 
 	@include('includes.home.header')
+	@include('sweetalert::alert')
 	
 	<div>
 		@yield('content')
