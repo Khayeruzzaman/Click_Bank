@@ -8,10 +8,12 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
+    //Login
     public function login()
     {
         return view('home.login');
     }
+    //Login Check With Validation
     public function CheckLogin(Request $request)
     {
         $this->validate($request,
@@ -47,11 +49,13 @@ class HomeController extends Controller
         }
     }
 
+    // Registration 
     public function signup()
     {
         return view('home.signup');
     }
-
+    
+    // Registration With Validation
     public function CheckSignup(Request $request)
     {
         $this->validate($request,
@@ -80,7 +84,7 @@ class HomeController extends Controller
 	     	]
 	     );
 
-        $var = new Admin();
+        $var = new Customer();
         $var->firstname = $request->f_name;
         $var->lastname = $request->l_name;
         $var->email = $request->email;
@@ -94,6 +98,7 @@ class HomeController extends Controller
         
     }
 
+    //Logging Out
     public function logout()
     {
         session()->forget('adminId');
