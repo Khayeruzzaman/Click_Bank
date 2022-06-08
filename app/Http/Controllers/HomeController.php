@@ -86,7 +86,7 @@ class HomeController extends Controller
         $var->email = $request->email;
         $var->phone = $request->mob_num; 
         $var->password = $request->password;
-        $var->points = '0';
+        //$var->points = '0';
         $var->save();
 
         
