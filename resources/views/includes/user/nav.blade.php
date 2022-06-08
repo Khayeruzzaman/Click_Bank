@@ -43,7 +43,11 @@ crossorigin="anonymous">
 		<ul class="nav justify-content-end" id="navA">
 
 		  <li class="nav-item">
-		  	<a class = "nav-link"  href="#">{{Session()->get('userPhone')}}</a>
+		  	<a class = "nav-link"  href="{{route('UserDashboard')}}">{{Session()->get('userPhone')}}</a>
+		  </li>
+
+		  <li class="nav-item">
+		  	<a class = "nav-link"  href="#">Points: {{Session()->get('userPoint')}}</a>
 		  </li>
 
 		  <li class="nav-item">

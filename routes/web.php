@@ -48,6 +48,11 @@ Route::controller(userController::class)->group(function(){
 
     Route::get('/user/dashboard', 'userDashboard')->name('UserDashboard');
 
+    Route::get('/user/news/{id}', 'newsShow')->name('NewsShow');
+
+    Route::get('/user/news/video/{id}', 'showVideo')->name('ShowVideo');
+
+    Route::get('/user/point', 'pointIncrease')->name('PointIncrease');
 });
 
 

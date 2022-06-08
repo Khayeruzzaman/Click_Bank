@@ -1,17 +1,17 @@
 @extends('layouts.user.user')
 
 @section('title')
-    {{'User Dashboard'}}
+    {{'User Notice'}}
 @endsection
 
 @section('content')
 
-	<style>
+<style>
 		
 		.viewUsers{
 
 			
-			
+
 			width: auto;
         	height: auto;
 	        margin: 25px 25px 25px 25px;
@@ -30,46 +30,53 @@
 			width: auto;
 			height: auto;
 			background-color: #2E7D32;
-	        text-transform: uppercase;
+	        
 
 		}
 
 		#title{
 			margin-left: 20px;
 			font-family: Roboto-Thin;
-			color: #FAFAFA;
+			color: black;
+            text-transform: uppercase;
 		}
 
-		#date{
+		#body{
 			font-size: 20px;
-			color: #FAFAFA;
+			color: black;
 			margin-left: 20px;
 			font-family: Roboto-Regular;
 		}
+
+        #btn{
+
+            margin-left:20px;
+            text-transform: uppercase;
+        }
 
 		
 	</style>
 
 <div class="dashContent">
 
-@foreach($news as $n)
+
 	
-	<a href="/user/news/{{ $n->id }}" style="text-decoration:none;">
+
 	<div class="viewUsers">
 		
-		<div class = 'container-title'>
-			<h2 id="title">{{ $n->title }} </br></h2> 
-		</div>
 		
-		<div class = 'container-title'>
-			<p id="date">{{ $n->updated_at }}</p>
-		</div>
+			<h2 id="title">{{ $news->title }} </h2> 
+		
+			<p id="body">{{ $news->description }}</p>
+        
+            <a href="/user/news/video/{{$news->id}}">
+                <button id= "btn" type="button" class="btn btn-primary">Watch</button>
+            </a>
 
-	</div></a>
-@endforeach
+	</div>
+
 	
 
 </div>
-
 
 @endsection

@@ -42,6 +42,7 @@ class HomeController extends Controller
         {
             $request->session()->put('userId', $customer->id);
             $request->session()->put('userPhone', $customer->phone);
+            $request->session()->put('userPoint', $customer->points);
             return redirect()->route('UserDashboard');
         }
     }
@@ -99,6 +100,7 @@ class HomeController extends Controller
         session()->forget('adminPhone');
         session()->forget('userId');
         session()->forget('userPhone');
+        session()->forget('userPoints');
         return redirect()->route('Login');
     }
 
