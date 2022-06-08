@@ -37,22 +37,22 @@ Route::controller(HomeController::class)->group(function(){
 
 Route::controller(adminController::class)->group(function(){
 
-    Route::get('/admin/dashboard', 'adminDashboard')->name('AdminDashboard');
+    Route::get('/admin/dashboard', 'adminDashboard')->name('AdminDashboard')->middleware('AdminCheck');
     
-    Route::post('/admin/create/post', 'adminPost')->name('AdminPost');
+    Route::post('/admin/create/post', 'adminPost')->name('AdminPost')->middleware('AdminCheck');
 
 });
 
 
 Route::controller(userController::class)->group(function(){
 
-    Route::get('/user/dashboard', 'userDashboard')->name('UserDashboard');
+    Route::get('/user/dashboard', 'userDashboard')->name('UserDashboard')->middleware('CustomerCheck');
 
-    Route::get('/user/news/{id}', 'newsShow')->name('NewsShow');
+    Route::get('/user/news/{id}', 'newsShow')->name('NewsShow')->middleware('CustomerCheck');
 
-    Route::get('/user/news/video/{id}', 'showVideo')->name('ShowVideo');
+    Route::get('/user/news/video/{id}', 'showVideo')->name('ShowVideo')->middleware('CustomerCheck');
 
-    Route::get('/user/point', 'pointIncrease')->name('PointIncrease');
+    Route::get('/user/point', 'pointIncrease')->name('PointIncrease')->middleware('CustomerCheck');
 });
 
 
