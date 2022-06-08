@@ -16,7 +16,7 @@ class CustomerCheck
      */
     public function handle(Request $request, Closure $next)
     {
-        if($request->session()->get('adminId')){
+        if($request->session()->get('userId')){
             return $next($request);
         }
         return redirect()->route('Login');

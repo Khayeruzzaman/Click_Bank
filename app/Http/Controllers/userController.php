@@ -8,6 +8,8 @@ use Illuminate\Http\Request;
 
 class userController extends Controller
 {
+
+    //User Dashboard
     public function userDashboard()
     {
 
@@ -15,6 +17,7 @@ class userController extends Controller
         return view('user.userDashboard')->with('news', $news);;
     }
 
+    // Users Post
     public function newsShow(Request $request)
     {
 
@@ -22,6 +25,7 @@ class userController extends Controller
         return view('user.news')->with('news', $news);;
     }
 
+    //Users Video
     public function showVideo(Request $request)
     {
 
@@ -29,6 +33,7 @@ class userController extends Controller
         return view('user.watchVideo')->with('news', $news);;
     }
 
+    // User Point Increasing
     public function pointIncrease()
     {
 

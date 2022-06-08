@@ -9,12 +9,15 @@ use Illuminate\Http\Request;
 
 class adminController extends Controller
 {
+
+    //Admin Dashboard
     public function adminDashboard()
     {
 
         return view('admin.adminDashboard');
     }
 
+    // Admin Creating Post With Validation
     public function adminPost(Request $request)
     {
 

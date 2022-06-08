@@ -65,7 +65,7 @@
             @endif <br>
 
             <label>Password</label>
-            <input class="form-control" type="text" name="password"  value="{{old('password')}}">
+            <input class="form-control" type="password" name="password"  value="{{old('password')}}">
             @if($errors->has('password'))
                 <span class="text-danger">
                     <strong> {{$errors->first('password')}} </strong>
