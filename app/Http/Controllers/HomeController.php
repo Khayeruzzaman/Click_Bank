@@ -80,13 +80,13 @@ class HomeController extends Controller
 	     	]
 	     );
 
-        $var = new Admin();
+        $var = new Customer();
         $var->firstname = $request->f_name;
         $var->lastname = $request->l_name;
         $var->email = $request->email;
         $var->phone = $request->mob_num; 
         $var->password = $request->password;
-        //$var->points = '0';
+        $var->points = '0';
         $var->save();
 
         
